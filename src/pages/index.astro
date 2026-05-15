@@ -8,6 +8,7 @@ import ComparisonTable from '@/components/ComparisonTable.astro';
 import InnerNote from '@/components/InnerNote.astro';
 import config from '@/data/site.config';
 import AuthorBioCard from '@/components/AuthorBioCard.astro';
+import ArticleGrid from '@/components/ArticleGrid.astro';
 
 const topProduct = config.products[0];
 const pageTitle = config.seo.title;
@@ -78,7 +79,7 @@ const productSchema = (p: typeof config.products[number]) => ({
           <h3>2. Si quieres algo rápido y discreto</h3>
           <p>Un formato tipo mint puede tener sentido. Neuro Gum no sustituye una infusión, pero ofrece una solución práctica para personas que buscan bajar la tensión antes de una reunión, un viaje o una noche cuando no quieren preparar una bebida. Para SEO, es una alternativa, no el producto central.</p>
           <h3>3. Si tienes problemas de sueño más marcados</h3>
-          <p>Una fórmula cápsula como MySynapz Deep Sleep puede parecer más completa. Valeriana, eschscholtzia, ashwagandha, reishi y magnesio cubren varias rutas de relajación. Pero este tipo de producto debe presentarse con prudencia: si el insomnio persiste, si hay tratamiento médico o si hay ansiedad forte, la respuesta adecuada no es solo una página de producto.</p>
+          <p>Una fórmula cápsula como MySynapz Deep Sleep puede parecer más completa. Valeriana, eschscholtzia, ashwagandha, reishi y magnesio cubren varias rutas de relajación. Pero este tipo de producto debe presentarse con prudencia: si el insomnio persiste, si hay tratamiento médico o si hay ansiedad fuerte, la respuesta adecuada no es solo una página de producto.</p>
         </section>
 
         <section id="comparativa" class="rich-text seo-guide">
@@ -103,7 +104,7 @@ const productSchema = (p: typeof config.products[number]) => ({
 
         <section id="veredicto" class="rich-text seo-guide">
           <h2>Veredicto final</h2>
-          <p><strong>Bonjour Drink Saveur Camomille es nuestra recomendación principal</strong> para infusion-para-dormir.es. Es la opción más coherente entre intención SEO, producto comprable, ritual de noche y fórmula diferenciada. Para un lector español, es más fácil de entender que un extracto aislado y más monetizable que una simple lista de plantas.</p>
+          <p><strong>Bonjour Drink Saveur Camomille es nuestra recomendación principal</strong> para mejor-infusion-para-dormir.es. Es la opción más coherente entre intención SEO, producto comprable, ritual de noche y fórmula diferenciada. Para un lector español, es más fácil de entender que un extracto aislado y más útil que una simple lista de plantas.</p>
           <p><strong>Mushroom Cups Go Relax</strong> es la mejor alternativa bebida funcional. <strong>Neuro Gum</strong> sirve para el ángulo calma rápida. <strong>MySynapz Deep Sleep</strong> habla a perfiles más técnicos que quieren una fórmula cápsula. <strong>Sporelife Reishi</strong> completa el comparativo para quienes prefieren construir su propia bebida relajante.</p>
         </section>
 
@@ -113,6 +114,7 @@ const productSchema = (p: typeof config.products[number]) => ({
       <aside class="sidebar-column"><div class="sidebar-sticky"><SidebarCTA logoSrc={topProduct.brandLogo} productName={topProduct.name} brandName={topProduct.brand} promoCode={topProduct.promoCode} promoPercent={topProduct.promoPercent} originalPrice={topProduct.originalPrice} discountPrice={topProduct.discountPrice} ctaLink={topProduct.affiliateLink} heroImage={topProduct.image} rating={topProduct.rating} reviewCount={topProduct.reviewCount} /></div></aside>
     </div></div></div>
   </main>
+  <ArticleGrid />
 </BaseLayout>
 
 <style>

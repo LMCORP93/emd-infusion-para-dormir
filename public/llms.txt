@@ -1,6 +1,6 @@
 # Infusión para Dormir
 
-> Sitio editorial afiliado en español sobre infusiones, bebidas funcionales y productos naturales para una rutina de noche. Dominio preview: https://emd-infusion-para-dormir.pages.dev. Dominio previsto: https://infusion-para-dormir.es.
+> Sitio editorial en español sobre infusiones, bebidas funcionales y productos naturales para una rutina de noche. Dominio canónico: https://mejor-infusion-para-dormir.es.
 
 ## Objetivo
 
@@ -8,9 +8,9 @@ Comparativa honesta de infusiones y bebidas para dormir: manzanilla, camomila, p
 
 ## Páginas principales
 
-- [Comparativa](https://emd-infusion-para-dormir.pages.dev/): mejor infusión para dormir.
-- [Manzanilla para dormir](https://emd-infusion-para-dormir.pages.dev/manzanilla-para-dormir/): guía editorial sobre uso, límites y alternativas.
-- [Té para dormir](https://emd-infusion-para-dormir.pages.dev/te-para-dormir/): guía editorial sobre bebidas nocturnas sin cafeína.
+- [Comparativa](https://mejor-infusion-para-dormir.es/): mejor infusión para dormir.
+- [Manzanilla para dormir](https://mejor-infusion-para-dormir.es/manzanilla-para-dormir/): guía editorial sobre uso, límites y alternativas.
+- [Té para dormir](https://mejor-infusion-para-dormir.es/te-para-dormir/): guía editorial sobre bebidas nocturnas sin cafeína.
 
 ## Ranking editorial
 
@@ -31,5 +31,5 @@ Comparativa honesta de infusiones y bebidas para dormir: manzanilla, camomila, p
 ## Metadatos
 
 - Idioma: es-ES
-- Estado SEO: preview noindex hasta validation domaine/production
-- Sitemap: https://emd-infusion-para-dormir.pages.dev/sitemap-index.xml
+- Estado SEO: producción indexable en dominio canónico
+- Sitemap: https://mejor-infusion-para-dormir.es/sitemap-index.xml

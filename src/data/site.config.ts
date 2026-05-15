@@ -102,7 +102,7 @@ const products: Product[] = [
     productType: 'Cápsulas con valeriana, eschscholtzia, ashwagandha, reishi y magnesio',
     pros: ['Fórmula de sueño más completa que una simple infusión', 'Valeriana, eschscholtzia, ashwagandha KSM-66, reishi y magnesio', 'Dosajes comunicados con precisión', 'Buena opción para usuarios que prefieren cápsulas'],
     cons: ['No es una bebida ni una infusión', 'Más técnico y menos inmediato para principiantes', 'Condiciones de entrega desde España a comprobar'],
-    description: 'MySynapz Deep Sleep es el producto más completo del comparativo en términos de fórmula. Valeriana, eschscholtzia, ashwagandha, reishi y magnesio hablan directamente a usuarios que no buscan solo una taza relajante, sino una rutina sommeil más estructurée.\n\nLo dejamos cuarto porque el EMD se centra en “infusión para dormir”: aquí el formato cápsula es algo menos natural para la intención. Il reste utile pour convertir les lecteurs qui veulent passer d’une tisane classique à une solution más completa, à condition de vérifier les conditions de livraison.'
+    description: 'MySynapz Deep Sleep es el producto más completo del comparativo en términos de fórmula. Valeriana, eschscholtzia, ashwagandha, reishi y magnesio hablan directamente a usuarios que no buscan solo una taza relajante, sino una rutina de sueño más estructurada.\n\nLo dejamos cuarto porque el EMD se centra en “infusión para dormir”: aquí el formato cápsula es algo menos natural para la intención. Sigue siendo útil para lectores que quieren pasar de una tisana clásica a una solución más completa, siempre verificando las condiciones de entrega.'
   },
   {
     rank: 5,
@@ -128,8 +128,8 @@ const products: Product[] = [
 ];
 
 const config: SiteConfig = {
-  domain: 'https://emd-infusion-para-dormir.pages.dev',
-  isIndexable: false,
+  domain: 'https://mejor-infusion-para-dormir.es',
+  isIndexable: true,
   siteName: 'Infusión para Dormir',
   brand: 'Bonjour Drink',
   product: 'Saveur Camomille',
@@ -141,7 +141,7 @@ const config: SiteConfig = {
   originalPrice: products[0].originalPrice,
   discountPrice: products[0].discountPrice,
   rating: products[0].rating,
-  author: { name: 'Tim', avatar: '/author-avatar.png', bio: 'Analista de complementos, bebidas funcionales y rutinas naturales para LMC desde 2024.' },
+  author: { name: 'Tim', avatar: '/author-avatar.png', bio: 'Analista editorial de complementos, bebidas funcionales y rutinas naturales desde 2024.' },
   seo: {
     title: 'Mejor infusión para dormir: comparativa 2026',
     description: 'Comparativa 2026 de infusiones y bebidas para dormir: Bonjour Drink Camomille, Go Relax, Neuro Gum, MySynapz y Reishi. Opiniones, precios y cupones.',
