@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import config from '@/data/site.config';
+---
+<BaseLayout title={`Aviso legal | ${config.siteName}`} description="Aviso legal, datos del editor, afiliación y responsabilidad editorial de Infusión para Dormir.">
+  <main class="container mx-auto px-4 py-16 max-w-3xl">
+    <h1 class="text-4xl font-bold mb-6">Aviso legal</h1>
+    <p class="mb-4">Este sitio es un medio comparativo independiente dedicado a infusiones, bebidas funcionales y productos naturales para una rutina de noche.</p>
+    <p class="mb-4">El sitio puede incluir enlaces hacia sitios externos. Estos enlaces facilitan el acceso a las ofertas citadas y no sustituyen tu propia verificación antes de comprar.</p>
+    <p class="mb-4">La información publicada tiene finalidad editorial y no sustituye el consejo de un profesional de salud.</p>
+    <a class="text-primary font-semibold" href="/">Volver a la comparativa</a>
+  </main>
+</BaseLayout>

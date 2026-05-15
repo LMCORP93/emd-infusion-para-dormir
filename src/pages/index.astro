@@ -1,0 +1,143 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHero from '@/components/BlogHero.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+import ComparatorCard from '@/components/ComparatorCard.astro';
+import SidebarCTA from '@/components/SidebarCTA.astro';
+import FAQSection from '@/components/FAQSection.astro';
+import ComparisonTable from '@/components/ComparisonTable.astro';
+import InnerNote from '@/components/InnerNote.astro';
+import config from '@/data/site.config';
+import AuthorBioCard from '@/components/AuthorBioCard.astro';
+
+const topProduct = config.products[0];
+const pageTitle = config.seo.title;
+const pageDescription = config.seo.description;
+const productLink = (brand: string, label = brand) => {
+  const product = config.products.find((item) => item.brand === brand);
+  const href = product?.affiliateLink && product.affiliateLink !== '#' ? product.affiliateLink : `#product-${product?.slug ?? ''}`;
+  const rel = href.startsWith('#') ? '' : ' rel="nofollow sponsored" target="_blank"';
+  return `<a class="table-link" href="${href}"${rel}>${label}</a>`;
+};
+const toAbsoluteUrl = (value: string) => /^https?:\/\//i.test(value) ? value : new URL(value, config.domain).toString();
+const numericPrice = (value: string) => String(value ?? '').replace(',', '.').replace(/[^\d.]/g, '');
+const productSchema = (p: typeof config.products[number]) => ({
+  '@type': 'Product', '@id': new URL(`/#product-${p.slug}`, config.domain).toString(), name: p.name,
+  image: toAbsoluteUrl(p.image), description: p.description, category: p.productType ?? config.productCategory,
+  brand: { '@type': 'Brand', name: p.brand },
+  offers: { '@type': 'Offer', priceCurrency: 'EUR', price: numericPrice(p.discountPrice), availability: 'https://schema.org/InStock', url: p.affiliateLink || config.domain, itemCondition: 'https://schema.org/NewCondition', shippingDetails: { '@type': 'OfferShippingDetails', shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'ES' }, shippingRate: { '@type': 'MonetaryAmount', value: 0, currency: 'EUR' }, deliveryTime: { '@type': 'ShippingDeliveryTime', handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 2, unitCode: 'DAY' }, transitTime: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 7, unitCode: 'DAY' } } }, hasMerchantReturnPolicy: { '@type': 'MerchantReturnPolicy', applicableCountry: 'ES', returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow', merchantReturnDays: 14, returnMethod: 'https://schema.org/ReturnByMail', returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility' } },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: p.rating, bestRating: 10, worstRating: 1, reviewCount: p.reviewCount },
+});
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: config.domain }] })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: config.products.map((p, i) => ({ '@type': 'ListItem', position: i + 1, item: productSchema(p) })) })} />
+  <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: config.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) })} />
+
+  <BlogHero
+    title={pageTitle}
+    description="Comparamos las mejores infusiones, bebidas funcionales y productos naturales para crear una rutina de noche más tranquila: manzanilla, reishi, L-teanina, pasiflora, magnesio y formatos realmente prácticos."
+    author={config.author.name}
+    authorAvatar={config.author.avatar}
+    date="15 de mayo de 2026"
+    readingTime="11 min de lectura"
+    breadcrumbs={[{ label: 'Infusión para dormir', href: '/' }]}
+    bannerImage="/images/content/infusion-para-dormir-banner.webp"
+    product={{ name: topProduct.name, image: topProduct.image, promoCode: topProduct.promoCode, promoPercent: topProduct.promoPercent, originalPrice: topProduct.originalPrice, discountPrice: topProduct.discountPrice, affiliateLink: topProduct.affiliateLink }}
+    heroButton={{ text: 'Ver el Top 5', href: `#product-${topProduct.slug}` }}
+    showOfferBlock={false}
+  />
+
+  <main style="background-color:#ffffff;">
+    <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
+      <div class="content-column">
+        <section id="resumen" class="rich-text">
+          <h2>Infusión para dormir: el resumen rápido</h2>
+          <p>La búsqueda <strong>infusión para dormir</strong> no significa solo “qué planta puedo tomar por la noche”. En realidad, el lector quiere una solución simple para bajar el ritmo: una bebida caliente, sin cafeína, fácil de repetir y suficientemente agradable para sustituir una tisana básica. El problema es que muchas recomendaciones se quedan en listas genéricas de manzanilla, tila y valeriana, sin explicar qué producto comprar ni para qué perfil.</p>
+          <p>Por eso esta página prioriza productos comprables online y comparables desde un punto de vista práctico. <strong>Bonjour Drink Saveur Camomille</strong> ocupa el primer puesto porque combina el ritual de una bebida nocturna con una fórmula más completa: camomila, pasiflora, reishi, L-teanina y anís verde. No promete curar el insomnio, pero sí ofrece una rutina clara para el final del día.</p>
+          <p>El resto del Top 5 completa el espectro: Mushroom Cups para un relax drink con reishi, Neuro Gum para un formato rápido, MySynapz para una fórmula cápsula más completa y Sporelife para quienes quieren trabajar alrededor del reishi. La lógica es sencilla: primero bebidas y ritual, después alternativas más funcionales.</p>
+        </section>
+
+        <section id="metodologia-clasificacion" class="methodology-box">
+          <h2>Cómo hemos clasificado los productos</h2>
+          <p>La clasificación no se basa solo en descuentos. Priorizamos el encaje con la intención de búsqueda, la claridad de la fórmula y la facilidad de uso antes de dormir.</p>
+          <ul>
+            <li>Formato compatible con una rutina de noche</li><li>Ingredientes útiles y comprensibles</li><li>Ausencia de cafeína o estimulantes fuertes</li><li>Oferta, precio y condiciones de compra</li><li>Transparencia de la marca</li><li>Prudencia sobre claims de sueño</li>
+          </ul>
+          <p class="methodology-box__disclaimer"><strong>Nota editorial.</strong> Esta comparativa es informativa y comercial. No sustituye un diagnóstico médico, especialmente si los problemas de sueño son persistentes.</p>
+        </section>
+
+        <TableOfContents items={config.tocItems} />
+
+        <section id="ranking" class="comparatif-cards">
+          {config.products.map((product) => (<div id={`product-${product.slug}`}><ComparatorCard product={product} /></div>))}
+        </section>
+
+        <section id="metodologia" class="rich-text seo-guide">
+          <h2>Qué hace que una infusión para dormir sea buena</h2>
+          <p>Una buena infusión para dormir no debería vender miedo ni prometer resultados médicos. Su función real es mucho más simple: ayudar a crear una señal de fin del día. Cuando una persona repite la misma bebida, a la misma hora, sin pantalla y sin cafeína, el cuerpo empieza a asociar ese gesto con el descanso. El producto importa, pero el contexto también.</p>
+          <p>La manzanilla es interesante porque es familiar, suave y fácil de aceptar. La pasiflora y la valeriana tienen un posicionamiento más marcado en relajación. El reishi habla a un público más moderno, acostumbrado a los champiñones funcionales. La L-teanina y el magnesio aportan un ángulo más complementario, especialmente para personas que no quieren solo una planta tradicional.</p>
+          <p>En esta página, un producto gana puntos si cumple tres condiciones: se toma fácilmente por la noche, no complica la rutina y explica claramente sus ingredientes. Un producto puede ser potente sobre el papel y aun así perder si el lector no va a repetirlo. Para dormir, la constancia pesa más que la fórmula espectacular.</p>
+        </section>
+
+        <InnerNote emoji="📌" text="Para una rutina de noche, la mejor opción no es necesariamente la más fuerte: es la que puedes repetir sin esfuerzo durante varias semanas." />
+
+        <section id="elegir" class="rich-text seo-guide">
+          <h2>Cómo elegir una infusión para dormir sin equivocarte</h2>
+          <h3>1. Si quieres un ritual caliente</h3>
+          <p>Elige una bebida. Es el formato más coherente si tu problema es el momento de transición entre día y noche. Bonjour Drink y Mushroom Cups encajan aquí porque se preparan como una bebida y no como una cápsula médica. El valor no está solo en los ingredientes, sino en el gesto: calentar agua o leche, pausar y cortar con la jornada.</p>
+          <h3>2. Si quieres algo rápido y discreto</h3>
+          <p>Un formato tipo mint puede tener sentido. Neuro Gum no sustituye una infusión, pero ofrece una solución práctica para personas que buscan bajar la tensión antes de una reunión, un viaje o una noche cuando no quieren preparar una bebida. Para SEO, es una alternativa, no el producto central.</p>
+          <h3>3. Si tienes problemas de sueño más marcados</h3>
+          <p>Una fórmula cápsula como MySynapz Deep Sleep puede parecer más completa. Valeriana, eschscholtzia, ashwagandha, reishi y magnesio cubren varias rutas de relajación. Pero este tipo de producto debe presentarse con prudencia: si el insomnio persiste, si hay tratamiento médico o si hay ansiedad forte, la respuesta adecuada no es solo una página de producto.</p>
+        </section>
+
+        <section id="comparativa" class="rich-text seo-guide">
+          <h2>Comparativa rápida según tu perfil</h2>
+          <p>La mejor compra depende de lo que esperas realmente. Un usuario que quiere “manzanilla para dormir” no busca lo mismo que alguien que compara L-teanina, GABA o reishi. Esta tabla resume la mejor opción según la intención.</p>
+        </section>
+
+        <ComparisonTable title="Qué producto elegir" headers={[{label:'Necesidad'}, {label:'Mejor opción'}]} rows={[
+          { cells: ['<span class="table-fit">🏆 Ritual de noche más claro</span><span class="table-muted"> Bebida caliente, camomila, pasiflora y L-teanina</span>', productLink('Bonjour Drink', '✅ Bonjour Drink Camomille')], highlight: true },
+          { cells: ['<span class="table-fit">🍄 Bebida relax con reishi</span><span class="table-muted"> Opción funcional y accesible</span>', productLink('Mushroom Cups', '✅ Go Relax') ] },
+          { cells: ['<span class="table-fit">⚡ Calma rápida</span><span class="table-muted"> Mint práctico fuera de casa</span>', productLink('Neuro Gum', '✅ Neuro Gum') ] },
+          { cells: ['<span class="table-fit">🌙 Fórmula sueño más completa</span><span class="table-muted"> Cápsulas con plantas, adaptógenos y magnesio</span>', productLink('MySynapz', '✅ Deep Sleep') ] },
+          { cells: ['<span class="table-fit">🍵 Reishi para bebida casera</span><span class="table-muted"> Extracto en polvo flexible</span>', productLink('Sporelife', '✅ Sporelife Reishi') ] },
+        ]} />
+
+        <section id="manzanilla" class="rich-text seo-guide">
+          <h2>Manzanilla para dormir: útil, pero no suficiente para todos</h2>
+          <p>La <strong>manzanilla para dormir</strong> es uno de los ángulos más buscados porque todo el mundo la entiende. Es suave, barata, disponible y asociada culturalmente a la noche. Para muchas personas, tomar una taza caliente ya ayuda a salir del modo trabajo y preparar el descanso. Pero eso no significa que cualquier manzanilla sea la mejor opción comercial para un comparativo.</p>
+          <p>El interés de Bonjour Drink Camomille es que no se limita a una planta. La camomila da el eje tradicional, la pasiflora refuerza el lado relax, el reishi aporta el ángulo funcional moderno y la L-teanina habla a quienes buscan calma mental sin somnolencia forzada. Esta combinación permite atacar la búsqueda “infusión para dormir” sin depender solo de un discurso de planta tradicional.</p>
+          <p>Hay que ser prudente: si alguien duerme muy mal desde hace varias semanas, se despierta todas las noches o toma medicación, la recomendación responsable es hablar con un profesional. Un EMD puede orientar hacia opciones naturales, comparar formatos y explicar ingredientes, pero no debe convertir una bebida en promesa terapéutica.</p>
+        </section>
+
+        <section id="veredicto" class="rich-text seo-guide">
+          <h2>Veredicto final</h2>
+          <p><strong>Bonjour Drink Saveur Camomille es nuestra recomendación principal</strong> para infusion-para-dormir.es. Es la opción más coherente entre intención SEO, producto comprable, ritual de noche y fórmula diferenciada. Para un lector español, es más fácil de entender que un extracto aislado y más monetizable que una simple lista de plantas.</p>
+          <p><strong>Mushroom Cups Go Relax</strong> es la mejor alternativa bebida funcional. <strong>Neuro Gum</strong> sirve para el ángulo calma rápida. <strong>MySynapz Deep Sleep</strong> habla a perfiles más técnicos que quieren una fórmula cápsula. <strong>Sporelife Reishi</strong> completa el comparativo para quienes prefieren construir su propia bebida relajante.</p>
+        </section>
+
+        <AuthorBioCard />
+        <section id="faq" class="faq-section"><FAQSection faq={config.faq} title="Preguntas frecuentes" /></section>
+      </div>
+      <aside class="sidebar-column"><div class="sidebar-sticky"><SidebarCTA logoSrc={topProduct.brandLogo} productName={topProduct.name} brandName={topProduct.brand} promoCode={topProduct.promoCode} promoPercent={topProduct.promoPercent} originalPrice={topProduct.originalPrice} discountPrice={topProduct.discountPrice} ctaLink={topProduct.affiliateLink} heroImage={topProduct.image} rating={topProduct.rating} reviewCount={topProduct.reviewCount} /></div></aside>
+    </div></div></div>
+  </main>
+</BaseLayout>
+
+<style>
+  .seo-guide { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 2rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
+  .seo-guide p { margin-bottom: 1rem; line-height: 1.8; color: #444; }
+  .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #f0ebe3; }
+  .methodology-box { margin: 2rem 0; padding: 1.35rem; border: 1px solid #eadfce; border-radius: 18px; background: #f8f4ec; color: #2f2922; }
+  .methodology-box, .methodology-box h2, .methodology-box p, .methodology-box li, .methodology-box strong { color: #2f2922; }
+  .methodology-box h2 { margin: 0 0 .75rem; font-size: clamp(1.35rem, 2vw, 1.8rem); line-height: 1.15; }
+  .methodology-box p { margin: 0 0 .9rem; line-height: 1.65; }
+  .methodology-box ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1rem; margin: .8rem 0 1rem; padding-left: 1.1rem; }
+  .methodology-box li { line-height: 1.45; }
+  .methodology-box__disclaimer { margin-top: .85rem !important; padding-top: .85rem; border-top: 1px solid #eadfce; font-size: .92rem; }
+  @media (max-width: 768px) { .methodology-box ul { grid-template-columns: 1fr; } .methodology-box { padding: 1rem; } }
+</style>
