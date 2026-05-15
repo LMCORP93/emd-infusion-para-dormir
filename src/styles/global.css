@@ -438,3 +438,57 @@ html {
 .copy-feedback.show {
   opacity: 1;
 }
+
+/* LMC compact content spacing standard: max 1rem vertical rhythm outside hero/banner. */
+.content-column > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.content-column.rich-text > section,
+.content-column .rich-text > section,
+.rich-text section {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+.content-column.rich-text > section:first-child,
+.content-column .rich-text > section:first-child,
+.rich-text section:first-child {
+  margin-top: 0 !important;
+}
+
+.rich-text h2,
+.rich-text h3,
+.rich-text h4 {
+  margin-top: 1rem !important;
+}
+
+.rich-text h2:first-child,
+.rich-text h3:first-child,
+.rich-text h4:first-child,
+.rich-text p:first-child {
+  margin-top: 0 !important;
+}
+
+.rich-text p,
+.rich-text ul,
+.rich-text ol,
+.rich-text blockquote,
+.rich-text figure,
+.rich-text img,
+.rich-text .inner-note,
+.rich-text .summary_wrapper {
+  margin-bottom: 0.75rem !important;
+}
+
+.rich-text p:last-child,
+.rich-text ul:last-child,
+.rich-text ol:last-child,
+.rich-text blockquote:last-child,
+.rich-text figure:last-child,
+.rich-text img:last-child,
+.rich-text .inner-note:last-child,
+.rich-text .summary_wrapper:last-child {
+  margin-bottom: 0 !important;
+}
