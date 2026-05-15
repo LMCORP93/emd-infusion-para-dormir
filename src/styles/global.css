@@ -101,10 +101,10 @@ html {
 
   /* ── Section padding ── */
   .padding-section-small { padding-top: 4rem; padding-bottom: 4rem; }
-  .padding-section-medium { padding-top: 6rem; padding-bottom: 6rem; }
+  .padding-section-medium { padding-top: 3rem; padding-bottom: 4rem; }
   .padding-section-large { padding-top: 8rem; padding-bottom: 8rem; }
   @media (max-width: 767px) {
-    .padding-section-medium { padding-top: 4rem; padding-bottom: 4rem; }
+    .padding-section-medium { padding-top: 2rem; padding-bottom: 3rem; }
     .padding-section-large { padding-top: 5rem; padding-bottom: 5rem; }
   }
 
@@ -197,8 +197,8 @@ html {
 /* ── Inner note box (moved to component scoped styles) ──────────── */
 
 /* ── Rich text content styling ────────────────────────────────────── */
-.rich-text h2 { margin-top: 2rem; margin-bottom: 0.75rem; }
-.rich-text h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; }
+.rich-text h2 { margin-top: 1rem; margin-bottom: 0.75rem; }
+.rich-text h3 { margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; }
 .rich-text p { margin-bottom: 0.75rem; line-height: 1.625; }
 .rich-text ul { list-style-type: disc; margin-bottom: 0.75rem; }
 .rich-text ul li { margin-bottom: 0.5rem; padding-left: 0.25rem; line-height: 1.5; }
@@ -209,8 +209,8 @@ html {
 .rich-text > :first-child { margin-top: 0; }
 .rich-text > :last-child { margin-bottom: 0; }
 @media (min-width: 768px) {
-  .rich-text h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
-  .rich-text h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
+  .rich-text h2 { margin-top: 1rem; margin-bottom: 0.75rem; }
+  .rich-text h3 { margin-top: 1rem; margin-bottom: 0.5rem; }
 }
 
 /* ── Blog hero gradient ──────────────────────────────────────────── */
@@ -236,7 +236,42 @@ html {
 .content-column {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+.content-column > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.content-column > .rich-text,
+.content-column > .faq-section,
+.content-column > section {
+  margin-top: 0 !important;
+}
+
+.rich-text section {
+  margin-top: 1rem !important;
+}
+
+.rich-text section:first-child {
+  margin-top: 0 !important;
+}
+
+.content-column.rich-text > section,
+.content-column.rich-text > .summary_wrapper,
+.content-column.rich-text > .content-image,
+.content-column.rich-text > .author-bio-card,
+.content-column.rich-text > .faq-section {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.rich-text section > h2:first-child,
+.rich-text section > h3:first-child,
+.rich-text > h2:first-child,
+.rich-text > h3:first-child {
+  margin-top: 0 !important;
 }
 .content-section {
   margin-bottom: 0;
@@ -244,7 +279,7 @@ html {
 .comparatif-cards {
   display: flex;
   flex-direction: column;
-  gap: clamp(2rem, 3vw, 3rem);
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 .comparatif-cards > div {
   scroll-margin-top: 6rem;
