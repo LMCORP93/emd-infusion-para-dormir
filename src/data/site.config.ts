@@ -147,6 +147,7 @@ const config: SiteConfig = {
     description: 'Comparativa 2026 de infusiones y bebidas para dormir: Bonjour Drink Camomille, Go Relax, Neuro Gum, MySynapz y Reishi. Opiniones, precios y cupones.',
     ogImage: '/og-image.jpg',
   },
+  analyticsMeasurementId: 'G-R2V1SC4Y5G',
   breadcrumbs: [{ label: 'Infusión para dormir', href: '/' }],
   quickSummary: {
     assets: ['Bonjour Drink Camomille es la recomendación principal para un ritual de noche sin cafeína.', 'El comparativo separa bebidas, mints, cápsulas y extractos para no mezclar falsas equivalencias.', 'Las opciones se ordenan por encaje con la intención “infusión para dormir”, fórmula, facilidad de uso y oferta real.'],
