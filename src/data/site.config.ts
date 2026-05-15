@@ -174,9 +174,9 @@ const config: SiteConfig = {
     { id: 'faq', label: 'FAQ' },
   ],
   pages: [
-    { type: 'comparatif', label: 'Comparativa', slug: '/' },
-    { type: 'blog', label: 'Manzanilla para dormir', slug: '/manzanilla-para-dormir/' },
-    { type: 'blog', label: 'Té para dormir', slug: '/te-para-dormir/' },
+    { type: 'comparatif', label: 'Comparativa', slug: '/', image: '/images/content/infusion-para-dormir-banner.webp' },
+    { type: 'blog', label: 'Manzanilla para dormir', slug: '/manzanilla-para-dormir/', image: '/images/content/manzanilla-para-dormir-banner.webp' },
+    { type: 'blog', label: 'Té para dormir', slug: '/te-para-dormir/', image: '/images/content/te-para-dormir-banner.webp' },
   ],
 };
 
