@@ -33,7 +33,7 @@ const products: Product[] = [
     promoPercent: 20,
     originalPrice: '39,00 €',
     discountPrice: '31,20 €',
-    affiliateLink: 'https://taap.it/bonjour-drink-lmc',
+    affiliateLink: 'https://es.bonjourdrink.co/LMC20',
     origin: '🇫🇷 Francia',
     availability: 'Venta online, entrega a verificar según país',
     productType: 'Bebida en polvo con camomila, pasiflora, reishi y L-teanina',
