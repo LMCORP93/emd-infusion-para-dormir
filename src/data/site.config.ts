@@ -102,7 +102,7 @@ const products: Product[] = [
     productType: 'Cápsulas con valeriana, eschscholtzia, ashwagandha, reishi y magnesio',
     pros: ['Fórmula de sueño más completa que una simple infusión', 'Valeriana, eschscholtzia, ashwagandha KSM-66, reishi y magnesio', 'Dosajes comunicados con precisión', 'Buena opción para usuarios que prefieren cápsulas'],
     cons: ['No es una bebida ni una infusión', 'Más técnico y menos inmediato para principiantes', 'Condiciones de entrega desde España a comprobar'],
-    description: 'MySynapz Deep Sleep es el producto más completo del comparativo en términos de fórmula. Valeriana, eschscholtzia, ashwagandha, reishi y magnesio hablan directamente a usuarios que no buscan solo una taza relajante, sino una rutina de sueño más estructurada.\n\nLo dejamos cuarto porque el EMD se centra en “infusión para dormir”: aquí el formato cápsula es algo menos natural para la intención. Sigue siendo útil para lectores que quieren pasar de una tisana clásica a una solución más completa, siempre verificando las condiciones de entrega.'
+    description: 'MySynapz Deep Sleep es el producto más completo del comparativo en términos de fórmula. Valeriana, eschscholtzia, ashwagandha, reishi y magnesio hablan directamente a usuarios que no buscan solo una taza relajante, sino una rutina de sueño más estructurada.\n\nLo dejamos cuarto porque esta comparativa se centra en “infusión para dormir”: aquí el formato cápsula es algo menos natural para la intención. Sigue siendo útil para lectores que quieren pasar de una tisana clásica a una solución más completa, siempre verificando las condiciones de entrega.'
   },
   {
     rank: 5,
@@ -143,8 +143,8 @@ const config: SiteConfig = {
   rating: products[0].rating,
   author: { name: 'Tim', avatar: '/author-avatar.png', bio: 'Analista editorial de complementos, bebidas funcionales y rutinas naturales desde 2024.' },
   seo: {
-    title: 'Mejor infusión para dormir: comparativa 2026',
-    description: 'Comparativa 2026 de infusiones y bebidas para dormir: Bonjour Drink Camomille, Go Relax, Neuro Gum, MySynapz y Reishi. Opiniones, precios y cupones.',
+    title: 'Mejor infusión para dormir 2026: comparativa de 5 productos',
+    description: 'Comparativa 2026 de infusiones y bebidas para dormir: manzanilla, pasiflora, reishi, L-teanina y más. Bonjour Drink, Mushroom Cups, Neuro Gum — opiniones y precios.',
     ogImage: '/og-image.jpg',
   },
   analyticsMeasurementId: 'G-R2V1SC4Y5G',
@@ -156,6 +156,9 @@ const config: SiteConfig = {
   pros: ['Top 5 centrado en ritual de noche y relajación', 'Bonjour Drink colocado como producto principal', 'Alternativas útiles para perfiles bebida, cápsula, mint y reishi'],
   cons: ['Mercado español aún menos maduro que Francia o Alemania', 'Algunas marcas requieren verificación final de entrega', 'No hay que prometer efectos médicos sobre el sueño'],
   faq: [
+    { question: '¿Valeriana o manzanilla para dormir?', answer: 'La manzanilla es más suave y familiar, adecuada para principiantes o como ritual ligero. La valeriana tiene un perfil más marcado en relajación profunda. Para un uso diario y fácil de mantener, la manzanilla o una bebida con camomila y pasiflora suele ser más práctica. La valeriana puede ser útil si el descanso es el objetivo prioritario, siempre con las precauciones indicadas en el envase.' },
+    { question: '¿Tila para dormir o manzanilla?', answer: 'Tila y manzanilla son las dos plantas más populares en España para el descanso nocturno. La tila tiene un perfil más sedante, la manzanilla es más ligera. Ninguna debe presentarse como tratamiento médico del insomnio. Como ritual de noche, cualquiera de las dos puede funcionar si se repite con regularidad y sin otros estimulantes por la tarde.' },
+    { question: '¿Se pueden tomar infusiones para dormir todos los días?', answer: 'En general, las infusiones de plantas como manzanilla, tila o pasiflora se toleran bien en uso diario. Lo más importante es elegir una fórmula sin cafeína y sin ingredientes contraindicados según tu situación de salud. Si tienes tratamiento en curso, consulta con tu médico o farmacéutico antes de instaurar un hábito diario.' },
     { question: '¿Cuál es la mejor infusión para dormir?', answer: 'Nuestra recomendación principal es Bonjour Drink Saveur Camomille, porque combina camomila, pasiflora, reishi, L-teanina y anís verde en una bebida de noche sin cafeína y fácil de repetir.' },
     { question: '¿La manzanilla ayuda a dormir?', answer: 'La manzanilla se utiliza tradicionalmente como planta de relajación y puede encajar dentro de un ritual nocturno. No debe presentarse como tratamiento médico del insomnio, pero sí como una opción suave para bajar el ritmo por la noche.' },
     { question: '¿Qué es mejor: infusión, cápsulas o mints?', answer: 'Para un ritual antes de dormir, una bebida caliente suele ser más natural. Las cápsulas pueden ser más completas, mientras que los mints son prácticos para calma puntual. La elección depende del perfil de uso.' },
