@@ -113,7 +113,7 @@ const products: Product[] = [
     brandLogo: '/images/logos/sporelife-logo.svg',
     rating: 7.9,
     reviewCount: 80,
-    promoCode: 'LMC20',
+    promoCode: 'LMC',
     promoPercent: 20,
     originalPrice: '34,90 €',
     discountPrice: '27,92 €',
