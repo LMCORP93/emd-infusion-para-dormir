@@ -144,7 +144,7 @@ const config: SiteConfig = {
   author: { name: 'Tim', avatar: '/author-avatar.png', bio: 'Analista editorial de complementos, bebidas funcionales y rutinas naturales desde 2024.' },
   seo: {
     title: 'Mejor infusión para dormir 2026: comparativa de 5 productos',
-    description: 'Comparativa 2026 de infusiones y bebidas para dormir: manzanilla, pasiflora, reishi, L-teanina y más. Bonjour Drink, Mushroom Cups, Neuro Gum — opiniones y precios.',
+    description: 'Comparativa 2026 de infusiones y bebidas para dormir: manzanilla, pasiflora, reishi, L-teanina y más. Bonjour Drink, Mushroom Cups, Neuro Gum: opiniones y precios.',
     ogImage: '/og-image.jpg',
   },
   analyticsMeasurementId: 'G-R2V1SC4Y5G',
