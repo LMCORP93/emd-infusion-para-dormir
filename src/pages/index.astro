@@ -49,7 +49,7 @@ const productSchema = (p: typeof config.products[number]) => ({
     showOfferBlock={false}
   />
 
-  <main style="background-color:#ffffff;">
+  <main style="background-color:#fcfbf7;">
     <div class="container-large padding-global"><div class="padding-section-medium"><div class="blog-grid">
       <div class="content-column">
         <section id="resumen" class="rich-text">
@@ -70,7 +70,7 @@ const productSchema = (p: typeof config.products[number]) => ({
           <p>En esta página, un producto gana puntos si cumple tres condiciones: se toma fácilmente por la noche, no complica la rutina y explica claramente sus ingredientes. Un producto puede ser potente sobre el papel y aun así perder si el lector no va a repetirlo. Para dormir, la constancia pesa más que la fórmula espectacular.</p>
         </section>
 
-        <InnerNote emoji="📌" text="Para una rutina de noche, la mejor opción no es necesariamente la más fuerte: es la que puedes repetir sin esfuerzo durante varias semanas." />
+        <InnerNote emoji="" text="Para una rutina de noche, la mejor opción no es necesariamente la más fuerte: es la que puedes repetir sin esfuerzo durante varias semanas." />
 
         <section id="elegir" class="rich-text seo-guide">
           <h2>Cómo elegir una infusión para dormir sin equivocarte</h2>
@@ -88,11 +88,11 @@ const productSchema = (p: typeof config.products[number]) => ({
         </section>
 
         <ComparisonTable title="Qué producto elegir" headers={[{label:'Necesidad'}, {label:'Mejor opción'}]} rows={[
-          { cells: ['<span class="table-fit">🏆 Ritual de noche más claro</span><span class="table-muted"> Bebida caliente, camomila, pasiflora y L-teanina</span>', productLink('Bonjour Drink', '✅ Bonjour Drink Camomille')], highlight: true },
-          { cells: ['<span class="table-fit">🍄 Bebida relax con reishi</span><span class="table-muted"> Opción funcional y accesible</span>', productLink('Mushroom Cups', '✅ Go Relax') ] },
-          { cells: ['<span class="table-fit">⚡ Calma rápida</span><span class="table-muted"> Mint práctico fuera de casa</span>', productLink('Neuro Gum', '✅ Neuro Gum') ] },
-          { cells: ['<span class="table-fit">🌙 Fórmula sueño más completa</span><span class="table-muted"> Cápsulas con plantas, adaptógenos y magnesio</span>', productLink('MySynapz', '✅ Deep Sleep') ] },
-          { cells: ['<span class="table-fit">🍵 Reishi para bebida casera</span><span class="table-muted"> Extracto en polvo flexible</span>', productLink('Sporelife', '✅ Sporelife Reishi') ] },
+          { cells: ['<span class="table-fit">Ritual de noche más claro</span><span class="table-muted"> Bebida caliente, camomila, pasiflora y L-teanina</span>', productLink('Bonjour Drink', 'Bonjour Drink Camomille')], highlight: true },
+          { cells: ['<span class="table-fit">Bebida relax con reishi</span><span class="table-muted"> Opción funcional y accesible</span>', productLink('Mushroom Cups', 'Go Relax') ] },
+          { cells: ['<span class="table-fit">⚡ Calma rápida</span><span class="table-muted"> Mint práctico fuera de casa</span>', productLink('Neuro Gum', 'Neuro Gum') ] },
+          { cells: ['<span class="table-fit">Fórmula sueño más completa</span><span class="table-muted"> Cápsulas con plantas, adaptógenos y magnesio</span>', productLink('MySynapz', 'Deep Sleep') ] },
+          { cells: ['<span class="table-fit">Reishi para bebida casera</span><span class="table-muted"> Extracto en polvo flexible</span>', productLink('Sporelife', 'Sporelife Reishi') ] },
         ]} />
 
         <section id="manzanilla" class="rich-text seo-guide">
@@ -118,10 +118,10 @@ const productSchema = (p: typeof config.products[number]) => ({
 </BaseLayout>
 
 <style>
-  .seo-guide { margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #f0ebe3; }
+  .seo-guide { margin-top: 1rem; padding-top: 1rem; }
   .seo-guide .rich-text h3, .seo-guide h3 { margin-top: 1rem; margin-bottom: .5rem; font-size: 1.25rem; font-weight: 600; color: #242424; }
   .seo-guide p { margin-bottom: .75rem; line-height: 1.7; color: #444; }
-  .faq-section { margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #f0ebe3; }
+  .faq-section { margin-top: 1rem; padding-top: 1rem; }
   .methodology-box { margin: 2rem 0; padding: 1.35rem; border: 1px solid #eadfce; border-radius: 18px; background: #f8f4ec; color: #2f2922; }
   .methodology-box, .methodology-box h2, .methodology-box p, .methodology-box li, .methodology-box strong { color: #2f2922; }
   .methodology-box h2 { margin: 0 0 .75rem; font-size: clamp(1.35rem, 2vw, 1.8rem); line-height: 1.15; }
