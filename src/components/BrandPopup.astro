@@ -23,7 +23,7 @@ const shortDesc = description.length > 100 ? description.slice(0, 97) + '...' : 
 const hasCode = Boolean(promoCode);
 const hasDiscount = Boolean(promoCode && promoPercent > 0);
 const priceLabel = hasDiscount ? discountPrice : 'Precio oficial';
-const triggerLabel = hasCode ? `Código descuento ${promoCode}` : '🎁 Ver oferta';
+const triggerLabel = hasCode ? `Código descuento ${promoCode}` : 'Ver oferta';
 ---
 
 <div id="brand-popup" class="bp" role="dialog" aria-modal="true" aria-label="Oferta asociada">
